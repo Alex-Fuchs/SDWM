@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+<meta charset="ISO-8859-1">
+<title>Siltronic AG Employee Diversity</title>
+<link rel="stylesheet" href="worldStyle.css">
+</head>
+<body>
+	<div class="sidenav">
+		<h1>Join the map of Diversity</h1>
+		<form action="add" method="post" name="form1">
+			<div class="inputDiv">
+				<h2>ID Number:</h2>
+				<input type="text" class="textInput" name="id" required>
+			</div>
+			<div class="inputDiv">
+				<h2>First Name:</h2>
+				<input type="text" class="textInput" name="firstName" required>
+			</div>
+			<div class="inputDiv">
+				<h2>Second Name:</h2>
+				<input type="text" class="textInput" name="secondName" required>
+			</div>
+			<div class="inputDiv">
+				<h2>Country:</h2>
+				<select class="countryInput">
+					<option th:each="country : ${countriesAsList}"
+						th:value="${country.name}" th:text="${country.name}"></option>
+				</select>
+			</div>
+			<div class="inputDiv">
+				<input type="submit" class="setUpData" value="Join">
+			</div>
+			<img class="siltronicLogo" src="data:image/png;base64,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">
+		</form>
+	</div>
+	<div class="main">
+		<script src="https://cdn.amcharts.com/lib/4/core.js" type="text/javascript"></script>
+		<script src="https://cdn.amcharts.com/lib/4/maps.js" type="text/javascript"></script>
+		<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js" type="text/javascript"></script>
+		<script src="https://cdn.amcharts.com/lib/4/themes/animated.js" type="text/javascript"></script>
+		<script th:inline="javascript">			
+			am4core.ready(function() {
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+
+						/* Create map instance */
+						var chart = am4core
+								.create("chartdiv", am4maps.MapChart);
+						
+						/* Sets the map to not overPanAble */
+						chart.maxPanOut = 0;
+
+						/* Set map definition */
+						chart.geodata = am4geodata_worldLow;
+
+						/* Set projection */
+						chart.projection = new am4maps.projections.Miller();
+
+						/* Create map polygon series */
+						var polygonSeries = chart.series
+								.push(new am4maps.MapPolygonSeries());
+
+						/* Make map load polygon (like country names) data from GeoJSON */
+						polygonSeries.useGeodata = true;
+						
+						/* Adds the number of Employees to every country */
+						polygonSeries.data = JSON.parse([[${countries}]]);
+						
+						/* Configure series */
+						var polygonTemplate = polygonSeries.mapPolygons.template;
+						polygonTemplate.applyOnClones = true;
+						polygonTemplate.togglable = true;
+						polygonTemplate.tooltipText = "{name}: [bold]{value}";
+						polygonTemplate.nonScalingStroke = true;
+						polygonTemplate.strokeOpacity = 0.5;
+						polygonTemplate.propertyFields.fill = "color";	
+						
+						var lastSelected;
+						polygonTemplate.events.on("hit", function(ev) {
+							window.location.href= 'employeesByCountry?country=' + ev.target.dataItem.dataContext.name;
+						})
+
+						/* Create selected and hover states and set alternative fill color */
+						var ss = polygonTemplate.states.create("active");
+						ss.properties.fill = am4core.color("#9d9d9d");
+
+						var hs = polygonTemplate.states.create("hover");
+						hs.properties.fill = am4core.color("#9d9d9d");
+
+						// Hide Antarctica
+						polygonSeries.exclude = [ "AQ" ];
+
+						// Small map
+						chart.smallMap = new am4maps.SmallMap();
+						// Re-position to top right (it defaults to bottom left)
+						chart.smallMap.align = "right";
+						chart.smallMap.valign = "top";
+						chart.smallMap.preventDragOut = true;
+						chart.smallMap.series.push(polygonSeries);
+
+						// Zoom control
+						chart.zoomControl = new am4maps.ZoomControl();
+
+						var homeButton = new am4core.Button();
+						homeButton.events.on("hit", function() {
+							chart.goHome();
+						});
+
+						homeButton.icon = new am4core.Sprite();
+						homeButton.padding(7, 5, 7, 5);
+						homeButton.width = 30;
+						homeButton.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
+						homeButton.marginBottom = 10;
+						homeButton.parent = chart.zoomControl;
+						homeButton.insertBefore(chart.zoomControl.plusButton);
+
+					}); // end am4core.ready()
+		</script>
+		<div id="chartdiv"></div>
+	</div>
+</body>
+</html>
