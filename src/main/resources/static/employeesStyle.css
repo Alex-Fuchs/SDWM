@@ -20,7 +20,7 @@ body {
 }
 
 .sidenav a {
-  font-size: 2.5em;
+  font-size: 2.2em;
   color: #818181;
   text-decoration: none;
 }
@@ -58,7 +58,6 @@ body {
 
 table {
   width: 90%;
-  margin-top: 2%;
   table-layout: fixed;
   border-collapse: collapse;
   border: 1px solid #3d3d3d;
@@ -69,11 +68,9 @@ th {
 }
 
 h1 {
-	margin-left: 2em;
-	margin-right: 2em;
 	text-align: center;
 	font-weight: bold;
-  	font-size: 2.5em;
+  	font-size: 2em;
   	color: white;
 }
 
